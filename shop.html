@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="スパイスセット、カレー、チャイの専門店">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/calendar.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/google-calendar@6.1.10/index.global.min.js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQZYMD97RT"></script>
     <script>
@@ -107,10 +110,11 @@
                 <div class="blank100px"></div>
                 <h3><img src="images/forrow_us.png" alt="Follow Us"></h3>
                 <ul class="icons">
-                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                    <li><a href="#"><i class="fab fa-line"></i></a></li>
-                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <!-- <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li> -->
+                    <!-- <li><a href="#"><i class="fab fa-line"></i></a></li> -->
+                    <li><a href="https://www.youtube.com/@tarucho8848"><i class="fab fa-youtube"></i></a></li>
+                    <li><a href="https://www.instagram.com/nepal_dar_lcog?igsh=MXh5cWJ5a2Vqa21sZA=="><i
+                                class="fab fa-instagram"></i></a></li>
                 </ul>
             </div>
         </section>
@@ -144,7 +148,7 @@
                 <span class="icon-text">Mail</span>
             </a>
 
-            <a href="#" class="header-icon-btn open-calendar-modal">
+            <a href="" class="header-icon-btn open-calendar-modal">
                 <i class="fa-solid fa-calendar" style="color: #e27051;"></i>
                 <span class="icon-text">Calendar</span>
             </a>
@@ -163,7 +167,7 @@
                 <span class="icon-text">　</span>
             </a>
              -->
-            <a href="cart.html" class="header-icon-btn header-cart-icon">
+            <a href="#" class="header-icon-btn header-cart-icon open-cart-modal">
                 <i class="fa-solid fa-cart-shopping" style="color: darkgreen;"></i>
                 <span class="cart-badge">0</span>
                 <span class="icon-text">Cart</span>
@@ -181,42 +185,70 @@
     <!--開閉ブロック-->
     <div id="menubar">
         <nav>
-                <li><a href="#home">トップ</a></li>
-                <li><a href="#special"><span class="menu-en">Information</span><span class="menu-sep">:</span><span
-                            class="menu-ja">お知らせ</span></a></li>
-                <li><a href="#kodawari">ダルバートってなぁに？</a></li>
-                <li><a href="#menu"><span class="menu-en">Food & Drink</span><span class="menu-sep">:</span><span
-                            class="menu-ja">お食事メニュー</span></a></li>
-                <li><a href="shop.html"><span class="menu-en">Tarucho Bazaar</span><span class="menu-sep">:</span><span
-                            class="menu-ja">オンラインショップ</span></a></li>
-                <li><a href="#blog"><span class="menu-en">Instagram</span><span class="menu-sep">:</span><span
-                            class="menu-ja">タルチョグラム</span></a></li>
-                <li><a href="#calendar"><span class="menu-en">Calendar</span><span class="menu-sep">:</span><span
-                            class="menu-ja">営業日・出店予定</span></a></li>
-                <li><a href="#shop"><span class="menu-en">Shop Information</span><span class="menu-sep">:</span><span
-                            class="menu-ja">ショップ情報</span></a></li>
-                <li><a href="https://ws.formzu.net/fgen/s743895720">
-                        <span class="menu-en">Contact us</span><span class="menu-sep">:</span><span
-                            class="menu-ja">お問い合わせ</span></a></li>
+            <li><a href="#home">トップ</a></li>
+            <li><a href="#special"><span class="menu-en">Information</span><span class="menu-sep">:</span><span
+                        class="menu-ja">お知らせ</span></a></li>
+            <li><a href="#kodawari">ダルバートってなぁに？</a></li>
+            <li><a href="#menu"><span class="menu-en">Food & Drink</span><span class="menu-sep">:</span><span
+                        class="menu-ja">お食事メニュー</span></a></li>
+            <li><a href="shop.html"><span class="menu-en">Tarucho Bazaar</span><span class="menu-sep">:</span><span
+                        class="menu-ja">オンラインショップ</span></a></li>
+            <li><a href="#blog"><span class="menu-en">Instagram</span><span class="menu-sep">:</span><span
+                        class="menu-ja">タルチョグラム</span></a></li>
+            <li><a href="#calendar"><span class="menu-en">Calendar</span><span class="menu-sep">:</span><span
+                        class="menu-ja">営業日・出店予定</span></a></li>
+            <li><a href="#shop"><span class="menu-en">Shop Information</span><span class="menu-sep">:</span><span
+                        class="menu-ja">ショップ情報</span></a></li>
+            <li><a href="https://ws.formzu.net/fgen/s743895720">
+                    <span class="menu-en">Contact us</span><span class="menu-sep">:</span><span
+                        class="menu-ja">お問い合わせ</span></a></li>
         </nav>
 
     </div>
-    
-    <!--modal-->
+
+    <!-----------------------       Modal     ----------------------------------->
     <div id="contact-modal" class="modal-overlay">
         <div class="modal-content">
             <span class="modal-close">&times;</span>
             <iframe src="https://ws.formzu.net/fgen/s743895720/" width="100%" height="600" frameborder="0"></iframe>
         </div>
     </div>
+
     <div id="calendar-modal" class="modal-overlay">
         <div class="modal-content">
             <span class="modal-close calendar-modal-close">×</span>
-            <iframe
-                src="https://calendar.google.com/calendar/embed?src=1c8900b430b36b7bcc4431607043e8327c66503d5bf0427db585eeba4d6aec7f%40group.calendar.google.com&ctz=Asia%2FTokyo"
-                style="border: 0" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
+            <div id="modal-calendar-container" style="padding: 10px;"></div>
         </div>
     </div>
+
+    <div id="cart-modal" class="modal-overlay">
+        <div class="modal-content cart-modal-content">
+            <span class="modal-close cart-modal-close">×</span>
+            <div class="cart-modal-inner">
+                <h3 class="cart-modal-title"><i class="fa-solid fa-cart-shopping"></i> Tarucho Bazaar Cart</h3>
+
+                <div id="modal-cart-list"></div>
+
+                <div id="modal-cart-summary" style="display:none;">
+                    <div class="total-price"
+                        style="margin-top: 20px; text-align: right; font-size: 1.2rem; font-weight: bold;">
+                        合計: <span id="modal-total-amount">0</span> 円
+                    </div>
+                    <form id="modal-payment-form">
+                        <button type="submit" class="buttonGreen"
+                            style="width: 100%; margin-top: 20px;">注文を確定して決済へ進む</button>
+                    </form>
+                </div>
+
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="#" class="cart-modal-close-btn"
+                        style="text-decoration: underline; color: #555;">お買い物を続ける</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://js.stripe.com/v3"></script>
 
 
     <!--jQueryの読み込み-->

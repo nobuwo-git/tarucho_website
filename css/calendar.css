@@ -123,3 +123,36 @@
     word-break: break-word !important; 
     overflow: visible !important; 
 }
+
+/* -----------------------------------
+   6. スマホ（小さい画面）向けのレイアウト調整
+----------------------------------- */
+@media screen and (max-width: 600px) {
+    /* ① タイトルとボタンを無理に横並びにせず、縦に並べて重なりを防ぐ */
+    .fc-header-toolbar {
+        flex-direction: column !important;
+        gap: 10px;
+    }
+    
+    /* ② タイトルの文字サイズを少し小さくする */
+    .fc-toolbar-title {
+        font-size: 1.2rem !important;
+    }
+    
+    /* ③ トップページ用のロゴ画像をスマホでは非表示にしてスペースを確保 */
+    .fc-logoSpacer-button {
+        display: none !important; 
+    }
+    
+    /* ④ 曜日や日付の文字を少し小さくしてマス目をスッキリさせる */
+    .fc-col-header-cell-cushion, 
+    .fc-daygrid-day-number {
+        font-size: 0.9rem !important;
+    }
+    
+    /* ⑤ 予定（イベント）の文字もスマホ用に少し小さくする */
+    .fc-event-title {
+        font-size: 0.8rem !important;
+        line-height: 1.2 !important;
+    }
+}

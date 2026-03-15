@@ -109,7 +109,7 @@ try {
         // 決済成功時：ドメイン名を含めたフルパスでthanks.htmlを指定
         'success_url' => 'https://' . $_SERVER['HTTP_HOST'] . '/thanks.html',
         // 決済キャンセル時：cart.htmlへ戻る
-        'cancel_url' => 'https://' . $_SERVER['HTTP_HOST'] . '/cart.html',
+        'cancel_url' => 'https://' . $_SERVER['HTTP_HOST'] . '/shop.html',
     ]);
 
     // 8. 成功したらセッションIDをJSONで返す

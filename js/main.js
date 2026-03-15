@@ -491,56 +491,56 @@ $(function () {
 });
 
 // cart.html の表示処理（こちらは既存のままでも動きますが、STORAGE_KEYを統一してください）
-$(function () {
-    const STORAGE_KEY = 'tarucho_cart';
+// $(function () {
+//     const STORAGE_KEY = 'tarucho_cart';
 
-    function displayCart() {
-        const cart = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-        const $list = $('#cart-list');
-        const $summary = $('#cart-summary');
-        $list.empty();
+//     function displayCart() {
+//         const cart = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+//         const $list = $('#cart-list');
+//         const $summary = $('#cart-summary');
+//         $list.empty();
 
-        if (cart.length === 0) {
-            $list.append('<p class="empty-msg">カートは空です。</p>');
-            $summary.hide();
-            return;
-        }
+//         if (cart.length === 0) {
+//             $list.append('<p class="empty-msg">カートは空です。</p>');
+//             $summary.hide();
+//             return;
+//         }
 
-        let total = 0;
-        cart.forEach((item, index) => {
-            const subtotal = item.price * item.quantity;
-            total += subtotal;
+//         let total = 0;
+//         cart.forEach((item, index) => {
+//             const subtotal = item.price * item.quantity;
+//             total += subtotal;
 
-            const html = `
-                <div class="cart-item">
-                    <div>
-                        <strong>${item.name}</strong><br>
-                        ${item.price} yen × ${item.quantity}
-                    </div>
-                    <div class="cart-item-name">
-                        <span>￥${subtotal}</span>
-                        <button class="remove-btn" data-index="${index}">削除</button>
-                    </div>
-                </div>
-            `;
-            $list.append(html);
-        });
+//             const html = `
+//                 <div class="cart-item">
+//                     <div>
+//                         <strong>${item.name}</strong><br>
+//                         ${item.price} yen × ${item.quantity}
+//                     </div>
+//                     <div class="cart-item-name">
+//                         <span>￥${subtotal}</span>
+//                         <button class="remove-btn" data-index="${index}">削除</button>
+//                     </div>
+//                 </div>
+//             `;
+//             $list.append(html);
+//         });
 
-        $('#total-amount').text(total.toLocaleString());
-        $summary.show();
-    }
+//         $('#total-amount').text(total.toLocaleString());
+//         $summary.show();
+//     }
 
-    // 削除ボタンの処理
-    $(document).on('click', '.remove-btn', function () {
-        const index = $(this).data('index');
-        let cart = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-        cart.splice(index, 1);
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
-        displayCart();
-    });
+//     // 削除ボタンの処理
+//     $(document).on('click', '.remove-btn', function () {
+//         const index = $(this).data('index');
+//         let cart = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+//         cart.splice(index, 1);
+//         localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+//         displayCart();
+//     });
 
-    displayCart();
-});
+//     displayCart();
+// });
 
 
 //Stripeを使用した決済////////////////////////////////////////////////////////////////////////////
@@ -597,67 +597,67 @@ $(function () {
 //     });
 // });
 
-$(function () {
-    // 【重要】ここにあなたのStripe公開鍵(pk_test_...)を入れてください
-    // const stripe = Stripe('pk_live_51SozopRsGlsC2tGIELjEAuJAJqXklhfxmTDFnPDfDiluJYJdO2SmUGQIaCENlFcSUFmanTM3ZAL9E04GPAiGj6Wf00T4AIR8ME');
-    const stripe = Stripe('pk_test_51Sozp02No4lhavLWeGlqNgEyX03BpqsWH6KSfxLcqVPOEaESrEOxj82J5NJlEvttNGdia8BJeXhFhO6OMmP73PEr00SEzsnNPK');
+// $(function () {
+//     // 【重要】ここにあなたのStripe公開鍵(pk_test_...)を入れてください
+//     // const stripe = Stripe('pk_live_51SozopRsGlsC2tGIELjEAuJAJqXklhfxmTDFnPDfDiluJYJdO2SmUGQIaCENlFcSUFmanTM3ZAL9E04GPAiGj6Wf00T4AIR8ME');
+//     const stripe = Stripe('pk_test_51Sozp02No4lhavLWeGlqNgEyX03BpqsWH6KSfxLcqVPOEaESrEOxj82J5NJlEvttNGdia8BJeXhFhO6OMmP73PEr00SEzsnNPK');
 
-    // --- 1. カートの中身を表示する処理 ---
-    const cart = JSON.parse(localStorage.getItem('tarucho_cart')) || [];
-    let total = 0;
-    const $container = $('#checkout-items');
+//     // --- 1. カートの中身を表示する処理 ---
+//     const cart = JSON.parse(localStorage.getItem('tarucho_cart')) || [];
+//     let total = 0;
+//     const $container = $('#checkout-items');
 
-    if (cart.length === 0) {
-        $container.html('<p>カートが空です</p>');
-    } else {
-        cart.forEach(item => {
-            total += item.price * item.quantity;
-            $container.append(`<p>${item.name} × ${item.quantity} (${(item.price * item.quantity).toLocaleString()} yen)</p>`);
-        });
-        $('#final-amount').text(total.toLocaleString());
-    }
+//     if (cart.length === 0) {
+//         $container.html('<p>カートが空です</p>');
+//     } else {
+//         cart.forEach(item => {
+//             total += item.price * item.quantity;
+//             $container.append(`<p>${item.name} × ${item.quantity} (${(item.price * item.quantity).toLocaleString()} yen)</p>`);
+//         });
+//         $('#final-amount').text(total.toLocaleString());
+//     }
 
-    // --- 2. 注文確定ボタンを押した時の処理 ---
-    $('#payment-form').on('submit', async function (e) {
-        e.preventDefault();
-        const $btn = $(this).find('button');
-        $btn.prop('disabled', true).text('決済ページへ移動中...');
+//     // --- 2. 注文確定ボタンを押した時の処理 ---
+//     $('#payment-form').on('submit', async function (e) {
+//         e.preventDefault();
+//         const $btn = $(this).find('button');
+//         $btn.prop('disabled', true).text('決済ページへ移動中...');
 
-        // FormDataを使用する形式に変更
-        const formData = new FormData();
-        formData.append('cart_data', JSON.stringify(cart));
+//         // FormDataを使用する形式に変更
+//         const formData = new FormData();
+//         formData.append('cart_data', JSON.stringify(cart));
 
-        try {
-            const response = await fetch('create-session.php', {
-                method: 'POST',
-                // FormDataを使う場合、Content-Typeヘッダーを自分で設定してはいけません（ブラウザが自動設定します）
-                body: formData
-            });
+//         try {
+//             const response = await fetch('create-session.php', {
+//                 method: 'POST',
+//                 // FormDataを使う場合、Content-Typeヘッダーを自分で設定してはいけません（ブラウザが自動設定します）
+//                 body: formData
+//             });
 
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.error || 'サーバーエラー');
-            }
+//             if (!response.ok) {
+//                 const errorData = await response.json();
+//                 throw new Error(errorData.error || 'サーバーエラー');
+//             }
 
-            const session = await response.json();
+//             const session = await response.json();
 
-            // Stripeの決済画面へリダイレクト
-            const result = await stripe.redirectToCheckout({
-                sessionId: session.id
-            });
+//             // Stripeの決済画面へリダイレクト
+//             const result = await stripe.redirectToCheckout({
+//                 sessionId: session.id
+//             });
 
-            if (result.error) {
-                throw new Error(result.error.message);
-            }
+//             if (result.error) {
+//                 throw new Error(result.error.message);
+//             }
 
-        } catch (error) {
-            console.error('Error:', error);
-            alert('エラー: ' + error.message);
-        } finally {
-            $btn.prop('disabled', false).text('注文を確定して決済へ進む');
-        }
-    });
-});
+//         } catch (error) {
+//             console.error('Error:', error);
+//             alert('エラー: ' + error.message);
+//         } finally {
+//             $btn.prop('disabled', false).text('注文を確定して決済へ進む');
+//         }
+//     });
+// });
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -751,18 +751,209 @@ $(function () {
 // ==========================================
 // カレンダーモーダルの開閉処理
 // ==========================================
+// ==========================================
+// カレンダーモーダルの開閉とFullCalendar描画
+// ==========================================
 $(function() {
+    let modalCalendar = null; // カレンダーを1度だけ生成するための変数
+
     // 「Calendar」ボタンをクリックした時
     $('.open-calendar-modal').on('click', function(e) {
-        e.preventDefault(); // 画面の一番上に飛んでしまうのを防ぐ
-        $('#calendar-modal').fadeIn(); // モーダルをフワッと表示
+        e.preventDefault(); 
+        
+        // モーダルをフワッと表示し、完全に開ききってからカレンダーを描画する
+        $('#calendar-modal').fadeIn(300, function() {
+            if (!modalCalendar) {
+                var calendarEl = document.getElementById('modal-calendar-container');
+                if (calendarEl) {
+                    modalCalendar = new FullCalendar.Calendar(calendarEl, {
+                        initialView: 'dayGridMonth',
+                        locale: 'ja',
+                        googleCalendarApiKey: 'AIzaSyBARCgAz3mTqsGn7Bi1xSSpwDAVanIRL7g', 
+                        events: '1c8900b430b36b7bcc4431607043e8327c66503d5bf0427db585eeba4d6aec7f@group.calendar.google.com',
+                        height: 'auto',
+                        headerToolbar: {
+                            left: 'title',
+                            center: '',
+                            right: 'today prev,next'
+                        },
+                        fixedWeekCount: false,
+                        showNonCurrentDates: false,
+                        dayCellContent: function (arg) {
+                            return arg.dayNumberText.replace('日', ''); 
+                        },
+                        // トップページと同じ綺麗な表示形式を適用
+                        eventContent: function(arg) {
+                            let event = arg.event;
+                            let title = event.title;
+                            
+                            if (event.allDay || !event.start) {
+                                return { html: '<div style="white-space: normal; padding: 2px; text-align: left;">' + title + '</div>' };
+                            }
+
+                            function formatTime(date) {
+                                if (!date) return '';
+                                let h = String(date.getHours()).padStart(2, '0');
+                                let m = String(date.getMinutes()).padStart(2, '0');
+                                return h + ':' + m;
+                            }
+
+                            let startTime = formatTime(event.start);
+                            let endTime = formatTime(event.end);
+                            let timeString = startTime;
+                            if (endTime) timeString += ' ~ ' + endTime;
+
+                            let htmlStr = '<div style="white-space: normal; word-break: break-word; padding: 2px; line-height: 1.4; text-align: left;">' + 
+                                          '<span style="font-size: 0.85em; color: #222;">' + timeString + '</span><br>' + 
+                                          '<span style="font-weight: bold; color: #333;">' + title + '</span>' + 
+                                          '</div>';
+
+                            return { html: htmlStr };
+                        }
+                    });
+                    modalCalendar.render();
+                }
+            }
+        });
     });
 
-    // 「×」ボタン、または黒い背景部分をクリックした時
+    // 「×」ボタン、または黒い背景部分をクリックして閉じる処理
     $('.calendar-modal-close, #calendar-modal').on('click', function(e) {
-        // 白い枠内（.modal-content）のクリックでは閉じないようにする
         if (!$(e.target).closest('.modal-content').length || $(e.target).hasClass('calendar-modal-close')) {
-            $('#calendar-modal').fadeOut(); // モーダルをフワッと消す
+            $('#calendar-modal').fadeOut(300);
+        }
+    });
+});
+
+// ==========================================
+// カートモーダルの表示と操作
+// ==========================================
+$(function() {
+    const STORAGE_KEY = 'tarucho_cart';
+
+    // カートのバッジ（数字）を更新する関数（どこからでも呼べるように）
+    window.updateBadgeGlobal = function() {
+        const cart = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+        const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+        const $badge = $('.cart-badge');
+        if ($badge.length > 0) {
+            if (totalCount > 0) {
+                $badge.text(totalCount).show();
+            } else {
+                $badge.hide();
+            }
+        }
+    };
+
+    // カートの中身をモーダル内に描画する関数
+    function renderModalCart() {
+        const cart = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+        const $list = $('#modal-cart-list');
+        const $summary = $('#modal-cart-summary');
+        $list.empty();
+
+        if (cart.length === 0) {
+            $list.append('<p class="empty-msg" style="text-align:center; padding:30px;">カートは空です。</p>');
+            $summary.hide();
+            return;
+        }
+
+        let total = 0;
+        cart.forEach((item, index) => {
+            const subtotal = item.price * item.quantity;
+            total += subtotal;
+
+            const html = `
+                <div class="modal-cart-item">
+                    <div>
+                        <strong>${item.name}</strong><br>
+                        ${item.price.toLocaleString()} yen × ${item.quantity}
+                    </div>
+                    <div class="modal-cart-item-right">
+                        <span>￥${subtotal.toLocaleString()}</span>
+                        <button class="remove-btn" data-index="${index}">削除</button>
+                    </div>
+                </div>
+            `;
+            $list.append(html);
+        });
+
+        $('#modal-total-amount').text(total.toLocaleString());
+        $summary.show();
+    }
+
+    // ①「Cart」アイコンをクリックした時
+    $(document).on('click', '.open-cart-modal', function(e) {
+        e.preventDefault();
+        renderModalCart(); // 開くたびに最新の情報を描画する
+        $('#cart-modal').fadeIn(300);
+        $('body').css('overflow', 'hidden'); // 背景スクロール防止
+    });
+
+    // ②「×」ボタン、背景、または「お買い物を続ける」をクリックした時
+    $(document).on('click', '.cart-modal-close, #cart-modal, .cart-modal-close-btn', function(e) {
+        if (!$(e.target).closest('.modal-content').length || $(e.target).hasClass('cart-modal-close') || $(e.target).hasClass('cart-modal-close-btn')) {
+            e.preventDefault();
+            $('#cart-modal').fadeOut(300);
+            $('body').css('overflow', '');
+        }
+    });
+
+    // ③モーダル内の削除ボタンを押した時
+    $(document).on('click', '#modal-cart-list .remove-btn', function () {
+        const index = $(this).data('index');
+        let cart = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+        cart.splice(index, 1);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+        
+        renderModalCart(); // モーダルの中身を再描画
+        window.updateBadgeGlobal(); // バッジの数字を更新
+    });
+});
+
+// ==========================================
+// Stripe決済処理（モーダル内から実行）
+// ==========================================
+$(function () {
+    // 【重要】ここにStripe公開鍵を入れてください
+    const stripe = Stripe('pk_test_51Sozp02No4lhavLWeGlqNgEyX03BpqsWH6KSfxLcqVPOEaESrEOxj82J5NJlEvttNGdia8BJeXhFhO6OMmP73PEr00SEzsnNPK');
+
+    $('#modal-payment-form').on('submit', async function (e) {
+        e.preventDefault();
+        const $btn = $(this).find('button');
+        $btn.prop('disabled', true).text('決済ページへ移動中...');
+
+        const cart = JSON.parse(localStorage.getItem('tarucho_cart')) || [];
+        const formData = new FormData();
+        formData.append('cart_data', JSON.stringify(cart));
+
+        try {
+            const response = await fetch('create-session.php', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || 'サーバーエラー');
+            }
+
+            const session = await response.json();
+
+            // Stripeの決済画面へリダイレクト
+            const result = await stripe.redirectToCheckout({
+                sessionId: session.id
+            });
+
+            if (result.error) {
+                throw new Error(result.error.message);
+            }
+
+        } catch (error) {
+            console.error('Error:', error);
+            alert('エラー: ' + error.message);
+        } finally {
+            $btn.prop('disabled', false).text('注文を確定して決済へ進む');
         }
     });
 });

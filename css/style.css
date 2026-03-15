@@ -34,14 +34,10 @@
 ---------------------------------------------------------------------------*/
 :root {
 	--primary-color: #f4c800;
-	/*テンプレートの土台カラー*/
 	--primary-inverse-color: #fafafa;
-	/*上のprimary-colorの対となる色*/
 
 	--secondary-color: #e27051;
-	/*テンプレートのサブまたはアクセントカラー*/
 	--secondary-inverse-color: #ffffff;
-	/*上のsecondary-colorの対となる色*/
 
 	/*配色アイデア手帳   P154 color code*/
 	--tertiary-color: #c69f74;
@@ -51,9 +47,7 @@
 	--tertiary-accent-color: #aa560a;
 
 	--accent-color: #22592f;
-	/*アクセントカラー*/
 	--accent-inverse-color: #ececec;
-	/*アクセントカラーの対となる色*/
 
 	--highlight-color: #e44627;
 
@@ -61,6 +55,13 @@
 	/*主に余白の一括管理用*/
 }
 
+/* :root {
+  --primary-color: #fdf5e6;  
+  --secondary-color: #5d4037;  
+  --tertiary-color: #ff9800;   
+  --tertiary-accent-color: #d32f2f; 
+  --tertiary-inverse-color: #ffffff;
+} */
 
 /*テキストのフェードイン設定
 ---------------------------------------------------------------------------*/
@@ -231,56 +232,62 @@ a:hover {
 /* Testcode*/
 
 .fixed-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 55px;
-    background-color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    justify-content: center; /* ← ここを flex-end から center に変更！ */
-    z-index: 1000;
-    background-size: contain;
-    background-position: center;
-    background-repeat: repeat;
-    border-bottom: 2px solid #333;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 55px;
+	background-color: var(--primary-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* ← ここを flex-end から center に変更！ */
+	z-index: 1000;
+	background-size: contain;
+	background-position: center;
+	background-repeat: repeat;
+	border-bottom: 2px solid #333;
 }
 
 /* ② 新しく作った「中央の箱」の設定を追記します */
 .header-center-area {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0px; /* スマホ画面でキツい場合はアイコンの隙間をここで調整します */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0px;
+	/* スマホ画面でキツい場合はアイコンの隙間をここで調整します */
 }
 
 /* ③ ロゴの高さをヘッダーに収まるよう微調整します */
 .header-logo {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    margin: 0 10px; /* ロゴの左右に少し余白を設けます */
+	display: flex;
+	align-items: center;
+	height: 100%;
+	margin: 0 10px;
+	/* ロゴの左右に少し余白を設けます */
 }
+
 .header-logo img {
-    height: 40px; /* 55pxのヘッダーからはみ出さないように */
-    width: auto;
-    object-fit: contain;
-    transition: 0.3s;
+	height: 40px;
+	/* 55pxのヘッダーからはみ出さないように */
+	width: auto;
+	object-fit: contain;
+	transition: 0.3s;
 }
 
 /* ④ アイコンの絶対固定（fixed）を解除します（※超重要） */
 .header-icon-btn {
-    position: relative; /* ← fixed から relative に変更！ */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    height: 55px;
-    width: 50px;
-    text-decoration: none;
-    transition: 0.3s;
+	position: relative;
+	/* ← fixed から relative に変更！ */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	height: 55px;
+	width: 50px;
+	text-decoration: none;
+	transition: 0.3s;
 }
 
 /* /////////////////// 使わない///////////////////*/
@@ -417,9 +424,10 @@ topPage #logo-container {
 	position: relative;
 	text-align: center;
 }
+
 #logo-container p {
 	flex: 1;
-	background:rgba(0, 0, 0, 0.4);
+	background: rgba(0, 0, 0, 0.4);
 	padding: 5px;
 	position: relative;
 	text-align: center;
@@ -928,10 +936,13 @@ topPage .kazari {
 	background-color: var(--accent-color);
 	border: 1px solid var(--accent-inverse-color);
 	/* 👇ここから下の3行を追加してくだされ！👇 */
-    display: flex;
-    align-items: center;      /* これが「上下」の中央揃えの魔法です！ */
-    justify-content: center;  /* ついでに「左右」も中央に揃えておきますぞ */
-    overflow: hidden;         /* 画像が枠からはみ出さないための保険です */
+	display: flex;
+	align-items: center;
+	/* これが「上下」の中央揃えの魔法です！ */
+	justify-content: center;
+	/* ついでに「左右」も中央に揃えておきますぞ */
+	overflow: hidden;
+	/* 画像が枠からはみ出さないための保険です */
 	border-radius: 15px;
 }
 
@@ -959,17 +970,25 @@ topPage .kazari {
 }
 
 .menu-container h3 {
-	background-color: #fff; /* 背景は白で文字をくっきり✨ */
-    color: var(--tertiary-accent-color); /* 文字はタルチョの可愛いブラウンオレンジ！ */
-    border: 3px solid var(--tertiary-accent-color); /* 枠線も同色で囲む！ */
-    border-radius: 25px; /* 角をクルッと丸くしてポップに💊 */
-    padding: 8px 30px; /* 内側の余白でふっくらさせる */
-    margin: 0 auto 20px auto; /* ど真ん中に配置して、下にも少し隙間を作る */
-    width: fit-content; /* 枠の幅を文字の長さにピッタリ合わせる魔法🪄 */
-    font-size: 1.4rem;
-    font-weight: bold;
-    text-align: center;
-    box-shadow: 0 4px 0 var(--tertiary-accent-color); /* 下にポテッとした影をつけて立体感アップ！ */
+	background-color: #fff;
+	/* 背景は白で文字をくっきり✨ */
+	color: var(--tertiary-accent-color);
+	/* 文字はタルチョの可愛いブラウンオレンジ！ */
+	border: 3px solid var(--tertiary-accent-color);
+	/* 枠線も同色で囲む！ */
+	border-radius: 25px;
+	/* 角をクルッと丸くしてポップに💊 */
+	padding: 8px 30px;
+	/* 内側の余白でふっくらさせる */
+	margin: 0 auto 20px auto;
+	/* ど真ん中に配置して、下にも少し隙間を作る */
+	width: fit-content;
+	/* 枠の幅を文字の長さにピッタリ合わせる魔法🪄 */
+	font-size: 1.4rem;
+	font-weight: bold;
+	text-align: center;
+	box-shadow: 0 4px 0 var(--tertiary-accent-color);
+	/* 下にポテッとした影をつけて立体感アップ！ */
 }
 
 
@@ -993,8 +1012,8 @@ topPage .kazari {
 	width: 80px;
 	height: auto;
 
-	transform :rotate(-10deg);
-	filter: drop-shadow(0px 3px 5px rgba(0,0,0,0.3));
+	transform: rotate(-10deg);
+	filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.3));
 }
 
 .shop-overlay {
@@ -1004,7 +1023,7 @@ topPage .kazari {
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
-	background-color:rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.5);
 	z-index: 10;
 	/* pointer-events: none; */
 }
@@ -1391,7 +1410,7 @@ topPage .kazari {
 	justify-content: space-around;
 	padding: 15px 20px;
 	border-radius: 10px;
-	border: 1px solid var(--tertiary-accent-color); 
+	border: 1px solid var(--tertiary-accent-color);
 	text-align: center;
 	font-size: 1.2rem;
 	padding: 50px 0;
@@ -1470,28 +1489,36 @@ topPage .kazari {
 
 /* メニューのリスト全体のスタイル */
 .menu-list {
-    list-style: none; /* デフォルトの黒丸を消す場合（お好みで残してもOK！） */
-    padding: 0;
+	list-style: none;
+	/* デフォルトの黒丸を消す場合（お好みで残してもOK！） */
+	padding: 0;
 	margin: 0 auto;
-    max-width: 350px; /* メニュー全体の幅をいい感じに固定 */
+	max-width: 350px;
+	/* メニュー全体の幅をいい感じに固定 */
 	color: var(--secondary-inverse-color);
 	background-color: var(--secondary-color);
 }
 
 /* ここが魔法のコード！✨ */
 .menu-list li {
-    display: flex; /* 横並びにする呪文 */
-    justify-content: space-between; /* 両端に引き離してピタッと揃える！ */
-    margin-bottom: 8px; /* 行の間隔を少し開けると見やすいよ */
-    border-bottom: 1px dashed #ccc; /* オマケ：下線（点線）を引くとさらにメニューっぽくて盛れる！不要なら消してOK */
+	display: flex;
+	/* 横並びにする呪文 */
+	justify-content: space-between;
+	/* 両端に引き離してピタッと揃える！ */
+	margin-bottom: 8px;
+	/* 行の間隔を少し開けると見やすいよ */
+	border-bottom: 1px dashed #ccc;
+	/* オマケ：下線（点線）を引くとさらにメニューっぽくて盛れる！不要なら消してOK */
 }
 
 .price-box {
-    display: flex;
-	
-    width: 140px; /* JPY/RSと数字が収まるくらいの幅を固定で指定！ */
+	display: flex;
+
+	width: 140px;
+	/* JPY/RSと数字が収まるくらいの幅を固定で指定！ */
 	padding: 3px 10px 3px 0px;
-    justify-content: space-between; /* JPY/RSは左端、数字は右端にピタッ！ */
+	justify-content: space-between;
+	/* JPY/RSは左端、数字は右端にピタッ！ */
 }
 
 /*サムネイルスライドショー
@@ -2246,65 +2273,151 @@ pre {
    お問い合わせ用ポップアップ（モーダル）
    ========================================= */
 .modal-overlay {
-    display: none; /* 最初は隠しておく */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* 背景を半透明の黒に */
-    z-index: 9999; /* 一番手前に表示させる魔法の数字 */
+	display: none;
+	/* 最初は隠しておく */
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	/* 背景を半透明の黒に */
+	z-index: 9999;
+	/* 一番手前に表示させる魔法の数字 */
 }
 
 .modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* 画面のど真ん中に配置 */
-    width: 90%;
-    max-width: 600px; /* パソコンで見ても大きくなりすぎないように */
-    background: #fff;
-    padding: 40px 10px 10px 10px; /* 上部に閉じるボタン用の余白を取る */
-    border-radius: 15px; /* 角を丸く */
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5); /* 影をつけて浮き上がらせる */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	/* 画面のど真ん中に配置 */
+	width: 90%;
+	max-width: 600px;
+	/* パソコンで見ても大きくなりすぎないように */
+	background: #fff;
+	padding: 40px 10px 10px 10px;
+	/* 上部に閉じるボタン用の余白を取る */
+	border-radius: 15px;
+	/* 角を丸く */
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+	/* 影をつけて浮き上がらせる */
 }
 
 .modal-close {
-    position: absolute;
-    top: 5px;
-    right: 15px;
-    font-size: 35px;
-    font-weight: bold;
-    color: #555;
-    cursor: pointer;
-    line-height: 1;
-    transition: 0.2s;
+	position: absolute;
+	top: 5px;
+	right: 15px;
+	font-size: 35px;
+	font-weight: bold;
+	color: #555;
+	cursor: pointer;
+	line-height: 1;
+	transition: 0.2s;
 }
 
 .modal-close:hover {
-    color: var(--highlight-color); /* マウスを乗せたらタルチョの赤色に */
+	color: var(--highlight-color);
+	/* マウスを乗せたらタルチョの赤色に */
 }
 
 /* =========================================
    ハンバーガーメニューの文字位置揃え（追加）
    ========================================= */
 #menubar nav ul li a {
-    display: flex;
-    align-items: center; /* 縦の真ん中で揃える */
+	display: flex;
+	align-items: center;
+	/* 縦の真ん中で揃える */
 }
 
 /* 英語部分の幅を固定（これでコロンの位置がビシッと揃います） */
 #menubar nav ul li a .menu-en {
-    width: 145px; /* 一番長い「Shop Information」が入る幅 */
-    flex-shrink: 0; /* スマホ画面が狭くても英語部分が潰れないようにする魔法 */
+	width: 100px;
+	font-size:0.9em;
+	flex-shrink: 0;
+	/* スマホ画面が狭くても英語部分が潰れないようにする魔法 */
 }
 
 /* コロンの左右に少し余白を作る */
 #menubar nav ul li a .menu-sep {
-    margin: 0 10px;
+	margin: 0 10px;
 }
 
 /* 日本語部分は、画面が狭くて改行された時のために少し行間を整える */
 #menubar nav ul li a .menu-ja {
-    line-height: 1.4;
+	line-height: 1.4;
+}
+
+/* =========================================
+   カートモーダル専用スタイル（微調整版）
+   ========================================= */
+.cart-modal-content {
+	max-width: 500px;
+	max-height: 85vh;
+	display: flex;
+	flex-direction: column;
+	/* 背景を白からメインカラー（--main-color）に変更 */
+	background-color: var(--primary-color);
+	border: 2px solid var(--tertiary-accent-color);
+	/* 縁取りにアクセントカラーを追加 */
+}
+
+.cart-modal-title {
+	color: var(--tertiary-accent-color);
+	text-align: center;
+	font-size: 1.4rem;
+	margin: 0 0 20px 0;
+	border-bottom: 2px dashed var(--tertiary-accent-color);
+	/* 点線も色を合わせる */
+	padding-bottom: 10px;
+}
+
+.cart-modal-inner {
+	overflow-y: auto;
+	padding: 10px;
+}
+
+/* カート内アイテムのデザイン（背景とのコントラストを調整） */
+.modal-cart-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	/* アイテム背景を少しだけ濃くして見やすくする */
+	background-color: rgba(255, 255, 255, 0.5);
+	color: var(--secondary-color);
+	/* テキストを濃い茶色に */
+	padding: 10px 15px;
+	margin-bottom: 10px;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	font-size: 0.95rem;
+}
+
+.modal-cart-item-right {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	font-weight: bold;
+	color: var(--tertiary-accent-color);
+	/* 金額を目立たせる */
+}
+
+/* 削除ボタンの調整 */
+.remove-btn {
+	background-color: #e74c3c;
+	color: white;
+	border: none;
+	padding: 5px 10px;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 0.8rem;
+}
+
+/* カレンダーモーダルの背景色をテーマカラーに変更 */
+#calendar-modal .modal-content {
+	background-color: var(--primary-color, #f4c800);
+	border: 2px solid var(--tertiary-accent-color, #aa560a);
+
+	max-height: 85vh;
+	overflow-y: auto;
 }
