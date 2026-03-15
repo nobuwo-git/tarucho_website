@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ショッピングカート - TARUCHO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* 背景を強制的に固定 */
+        #onlineshop.section::before {
+            content: "";
+            display: block !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            animation: none !important;
+        }
+
+        /* コンテンツエリアの調整 */
+        #onlineshop .contents {
+            background: rgba(255, 255, 255, 0.9);
+            /* 白背景を少し透かして清潔感を出す */
+            border-radius: 15px;
+            padding: 40px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+            color: #333;
+        }
+
+        .remove-btn:hover {
+            background: var(--highlight-color);
+            color: #fff;
+        }
+
+        /* 決済ボタンをコンパクトにする */
+        #payment-form button {
+            display: block;
+            /* ブロック要素にする */
+            width: 200px;
+            /* ボタンの幅を固定（お好みで調整してください） */
+            margin: 30px auto 0;
+            /* 中央寄せにし、上に余白を作る */
+            background: var(--secondary-color);
+            color: #fff;
+            border: none;
+            padding: 12px 0;
+            /* 上下を少しスリムに */
+            font-size: 1.1rem;
+            /* 文字サイズを標準的に */
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            /* 軽い影をつけてボタンらしく */
+        }
+
+        /* ホバー時の演出 */
+        #payment-form button:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            /* 少し浮き上がらせる */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* 決済処理中の状態 */
+        #payment-form button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* ショップに戻るボタンのデザイン */
+        .btn-back {
+            display: inline-block;
+            width: 160px;
+            /* ボタンの幅 */
+            background: #fff;
+            /* 背景は白 */
+            color: var(--secondary-color) !important;
+            /* 文字色はサブカラー */
+            border: 2px solid var(--secondary-color);
+            /* 枠線を付ける */
+            padding: 1px 5px 1px 5px;
+            margin-top: 30px;
+            border-radius: 30px;
+            /* 丸みをつける */
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            /* 変化をなめらかに */
+        }
+
+        /* マウスを乗せた時の動き（反転させる） */
+        .btn-back:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+            /* 少し浮き上がらせる */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* スマホ対応 */
+        @media screen and (max-width: 600px) {
+            .cart-item {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+
+            .cart-item-name {
+                grid-column: 1 / 3;
+            }
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQZYMD97RT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-QQZYMD97RT');
+    </script>
+</head>
+
+
+
+
+<body>
+    <!-- PC用　左側メニュー -->
+    <nav id="header-menu">
+        <ul>
+            <li><a href="index.html">トップに戻る</a></li>
+            <li><a href="shop.html">Online Shop</a></li>
+        </ul>
+    </nav>
+
+
+    <main>
+        <section id="cart" class="section">
+            <div class="contents">
+                <div class="blank60px"></div>
+                <div>
+                    <img src="images/Banner__Cart2.png" alt="">
+                </div>
+                <div class="blank10px"></div>
+
+                <div id="cart-list"></div>
+                <div id="check-out-items"></div>
+                <div id="cart-summary" style="display:none;">
+                    <div class="total-price">
+                        合計: <span id="total-amount">0</span> 円
+                    </div>
+                    <form id="payment-form">
+                        <button type="submit" class="btn1">決済ページへ</button>
+                    </form>
+
+                </div>
+
+                <div class="c">
+                    <a href="shop.html" class="btn-back">ショップに戻る</a>
+                    <div class="blank60px"></div>
+                </div>
+                <h3><img src="images/forrow_us.png" alt="Follow Us"></h3>
+                <ul class="icons">
+                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-line"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+
+                <!-- ここからコピーライト -->
+                <footer class="section">
+                    <div class="contents">
+                        <small>Copyright&copy; TARUCHO All Rights Reserved.</small><br>
+                        <a href="tradelaw.html"><small>特定商取引法に基づく表記</small></a>
+                    </div>
+                </footer>
+
+            </div>
+        </section>
+    </main>
+
+
+    <!-- ハンバーガーメニュー　-->
+    <header class="fixed-header">
+
+        <div class="header-center-area">
+
+            <a href="https://www.instagram.com/nepal_dar_lcog?igsh=MXh5cWJ5a2Vqa21sZA==" class="header-icon-btn">
+                <i class="fa-brands fa-instagram" style="color: #e27051;"></i>
+                <span class="icon-text">IG</span>
+            </a>
+
+            <a href="calendar_test.html" class="header-icon-btn">
+                <i class="fa-solid fa-calendar" style="color: #e27051;"></i>
+                <span class="icon-text">Calendar</span>
+            </a>
+
+            <div class="header-logo">
+                <a href="index.html"><img src="images/tarucho_logo_01.png" alt="タルチョ"></a>
+            </div>
+
+            <a href="shop.html" class="header-icon-btn">
+                <i class="fa-solid fa-store" style="color: darkgreen;"></i>
+                <span class="icon-text">Shop</span>
+            </a>
+
+            <a href="cart.html" class="header-icon-btn header-cart-icon">
+                <i class="fa-solid fa-cart-shopping" style="color: darkgreen;"></i>
+                <span class="cart-badge">0</span>
+                <span class="icon-text">Cart</span>
+            </a>
+
+        </div>
+        <div id="menubar_hdr">
+            <span></span><span></span><span></span>
+        </div>
+
+    </header>
+
+
+    <!--開閉ブロック-->
+    <div id="menubar">
+        <nav>
+            <ul>
+                <li><a href="#home">トップ</a></li>
+                <li><a href="#special">News</a></li>
+                <li><a href="#kodawari">ダルバートってなぁに？</a></li>
+                <li><a href="#menu">メニュー</a></li>
+                <li><a href="shop.html">オンラインショップ</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#shop">ショップ情報</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!--/#menubar-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
+    <script src="js/jquery.inview_set.js"></script>
+
+    <script src="https://js.stripe.com/v3"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

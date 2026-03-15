@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ネパール料理　タルチョ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ネパール料理　本格ダルバートが食べられるお店　スパイスカレー">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- 大きな端末で表示される左側メニュー -->
+    <nav id="header-menu">
+        <ul>
+            <li><a href="#home">Top</a></li>
+            <li><a href="#special">News</a></li>
+            <li><a href="#kodawari">What is Dalbhat</a></li>
+            <li><a href="#gallery">Menu</a></li>
+            <li><a href="#menu">Online Shop</a></li>
+            <li><a href="#blog">blog</a></li>
+            <li><a href="#shop">Shop Info</a></li>
+            <li><a href="calendar_test.html">calendar</a></li>
+        </ul>
+    </nav>
+
+    <div class="shapedividers_com-2164"></div>
+
+    <main>
+
+        <!-- ここからhome -->
+        <topPage id="home" class="section">
+            <div class="contents shapedividers_com-2164">
+
+                <div id="logo-container">
+                    <h1 class="logo"><img src="images/tarucho_logo_01.png" alt="ネパール料理タルチョ"></h1>
+                    <p>本格ダルバート、ネパールのソウルフード</p>
+                    <!-- <p class="kazari"><img src="images/new_open.png" alt="New Open"></p> -->
+                </div>
+
+                <div class="scroll-container">
+                    <p>SCROLL</p>
+                    <div class="scroll-line"><span></span></div>
+                </div>
+            </div>
+        </topPage>
+
+
+
+
+        <!-- ここからspecial (what is dalbhat?)-->
+        <section id="special">
+            <div class="contents">
+
+                <!-- <h2><span class="hosoku">What's New</span><span class="fade-in-text">お知らせ</span></h2> -->
+                <!-- <img src="images/news_banner.gif" alt="News"> -->
+                <div class="subTitle">
+                    <img src="images/Banner__Notice.png" alt="">
+                </div>
+
+
+                <div class="slide5">
+                    <div class="slide img1">
+                        <!-- <img src="images/WebSampleContents01.png" alt=""> -->
+                        <a href="calendar_test.html" target="calendar"><iframe name="calendar" title="カレンダー"
+                                src="https://timetreeapp.com/public_calendars/tarucho/embed/monthly?calendar_name=true&frame_color=%23fdc02d"
+                                style="width:100%;min-height:700px;aspect-ratio:680/720;border:none"></iframe></a>
+                        <p class="text">今月の営業日</p>
+                        <span class="icon-menu-point">NEW</span>
+                    </div>
+
+                    <div class="slide">
+                        <img src="images/WebSampleContents02.png" alt="">
+                        <p class="text">準備中♪</p>
+                        <span class="icon-menu-point">数量限定</span>
+                    </div>
+
+                    <div class="slide">
+                        <img src="images/WebSampleContents03.png" alt="">
+                        <p class="text">冬季営業について</p>
+                    </div>
+
+                    <!-- インジケーターボタン（現在表示中ボタン） -->
+                    <div class="slide-indicators"></div>
+
+                </div>
+                <!-- /.slide5 -->
+
+                <div class="blank100px"></div>
+            </div>
+            <div class="gradient-divider gradient1to2">
+                <div class="scroll-container">
+                    <p>SCROLL</p>
+                    <div class="scroll-line"><span></span></div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ここからkodawari -->
+        <section id="kodawari" class="section">
+            <div class="contents">
+
+                <!-- <h2><span class="hosoku">What is Dalbhat?_?</span><span class="fade-in-text">ダルバートってなに？</span></h2> -->
+                <div class="subTitle">
+                    <img src="images/Banner__Whatis.png" alt="What's Dalbhat?">
+                </div>
+
+                <div class="bg1">
+                    <aside class="up">
+                        <img src="images/kodawari_img2.jpg" alt="">
+                    </aside>
+
+                    <span class="up">
+                        <p>ダルバートとは、ネパールを代表する家庭料理で、主食の米（バート）に豆のスープ（ダル）を中心とした副菜を組み合わせた定食形式の食事です。</p>
+                        <p>ダルはレンズ豆やひよこ豆を煮込んだスープで、良質なたんぱく質を摂取できます。バートはお米で香り高いバスマティライスを使用します。</p>
+                        <p>これに季節の野菜をスパイスで炒めたもの（タルカリ）、漬物（アチャール）、青菜炒め、カレーが添えられます。</p>
+                        <p>栄養バランスに優れ、炭水化物・タンパク質・ビタミン・ミネラルを一度に摂取できます。家庭や地方によって具材や味付けが異なります。</p>
+                        <p>タルチョではネパールの味を残しつつ色々な人達に美味しく食べて頂けるよう工夫し愛情込めて作っています。是非タルチョで特別な時間を体感してください。</p>
+                    </span>
+                </div>
+
+                <div class="blank100px"></div>
+
+            </div>
+            <div class="gradient-divider gradient2to3">
+                <div class="scroll-container">
+                    <p>SCROLL</p>
+                    <div class="scroll-line"><span></span></div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ここからgallery→All Menu -->
+        <section id="gallery" class="section">
+            <div class="contents">
+                <!-- <div class="gallery-box"> -->
+
+                <!-- <h2><a href="shop.html"><span class="hosoku">Online Shop</span><span class="fade-in-text">オンラインショップ</span></a></h2> -->
+                <div class="subTitle"><img src="images/Banner__Foodmenu.png" alt=""></div>
+                <!-- <aside class="blur"><img src="images/bg_gallery.png" alt=""></aside> -->
+
+                <div class="slide-thumbnail-box">
+                    <div class="slide-thumbnail1">
+                        <div class="img rtl">
+                            <div><img src="images/menu3.png" alt=""></div>
+                            <div><img src="images/menu1.jpg" alt=""></div>
+                            <div><img src="images/menu2.jpg" alt=""></div>
+                            <div><img src="images/menu3.png" alt=""></div>
+                            <div><img src="images/menu1.jpg" alt=""></div>
+                            <div><img src="images/menu2.jpg" alt=""></div>
+                        </div>
+                    </div>
+
+                    <div class="slide-thumbnail1">
+                        <div class="img ltr">
+                            <div><img src="images/spice.jpg" alt=""></div>
+                            <div><img src="images/chai.jpg" alt=""></div>
+                            <div><img src="images/spice.jpg" alt=""></div>
+                            <div><img src="images/chai.jpg" alt=""></div>
+                            <div><img src="images/spice.jpg" alt=""></div>
+                            <div><img src="images/chai.jpg" alt=""></div>
+                        </div>
+                    </div>
+
+                    <!-- </div> -->
+
+                </div>
+                <div class="blank100px"></div>
+            </div>
+            <div class="gradient-divider gradient1to2">
+                <div class="scroll-container">
+                    <p>SCROLL</p>
+                    <div class="scroll-line"><span></span></div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ここからmenu →　オンラインショップへ変更-->
+        <section id="menu" class="section">
+            <div class="contents">
+
+                <!-- <h2>MENU</h2> -->
+                <div class="subTitle">
+                    <img src="images/Banner__ECshop.png" alt="menu">
+                </div>
+
+                <div class="menu up">
+                    <img src="images/dalbhart_kit.jpg" alt="">
+                    <p class="text">ダルバートセット ￥1,500</p>
+                    <span class="icon-menu-point">NEW</span>
+                </div>
+
+                <div class="menu up">
+                    <img src="images/chai_kit.jpg" alt="">
+                    <p class="text">チャイセット ￥500</p>
+                </div>
+
+                <div class="menu up">
+                    <img src="images/chai.jpg">
+                    <p class="text">スパイスセット1 ￥500</p>
+                </div>
+
+                <div class="menu up">
+                    <img src="images/spice.jpg" alt="">
+                    <p class="text">スパイスセット2 ￥500</p>
+                    <span class="icon-menu-point">NEW</span>
+                </div>
+
+                <a href="shop.html"><button class="buttonGreen">全ての商品をみる</button></a>
+                <div class="blank100px"></div>
+            </div>
+            <div class="gradient-divider gradient2to3">
+                <div class="scroll-container">
+                    <p>SCROLL</p>
+                    <div class="scroll-line"><span></span></div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 営業日カレンダー　-->
+        <section id="calendar" class="section">
+            <div class="contents">
+                <div class="subTitle"><img src="images/Banner_calendar.png" alt=""></div>
+                <a href="calendar_test.html" target="calendar"><iframe name="calendar" title="カレンダー"
+                        src="https://timetreeapp.com/public_calendars/tarucho/embed/monthly?calendar_name=true&frame_color=%23fdc02d"
+                        style="width:100%;min-height:700px;aspect-ratio:680/720;border:none"></iframe></a>
+                <div class="blank100px"></div>
+                <div class="blank100px"></div>
+
+                <div class="scroll-container">
+                    <p>SCROLL</p>
+                    <div class="scroll-line"><span></span></div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- ここからお知らせとshop情報 -->
+        <section id="blog" class="section">
+            <div class="contents">
+
+                <!-- <h2><span class="fade-in-text">Blog</span></h2> -->
+                <div class="subTitle"><img src="images/Banner__instagram.png" alt=""></div>
+                <div class="snapwidget">
+                    <!-- SnapWidget -->
+                    <script src="https://snapwidget.com/js/snapwidget.js"></script>
+                    <iframe src="https://snapwidget.com/embed/1116788" class="snapwidget-widget"
+                        allowtransparency="true" frameborder="0" scrolling="no"
+                        style="border:none; overflow:hidden;  width:100%; " title="Posts from Instagram"></iframe>
+                    <!-- SnapWidgetここまで-->
+                </div>
+                <!-- <dl class="table">
+
+                    <dt>2025.06.xx</dt>
+                    <dd>店舗併設型キッチンカーカフェOpen！！</dd>
+
+                    <dt>2024.xx.xx</dt>
+                    <dd>キッチンカー全国ツアー</dd>
+
+                    <dt>202x.xx.xx</dt>
+                    <dd>ネパール料理タルチョ　キッチンカーで営業開始</dd>
+
+                    <dt>202x.xx.xx</dt>
+                    <dd></dd>
+
+                </dl> -->
+            </div>
+        </section>
+
+        <!-- 追加分 -->
+        <section id="shop" class="section">
+            <div class="contents">
+                <div class="shop-data">
+
+                    <h2><span class="hosoku">Shop Data</span><span class="fade-in-text">店舗情報</span></h2>
+
+                    <dl class="table">
+
+                        <dt>所在地</dt>
+                        <dd>北海道上川郡上川町旭町５８－４</dd>
+
+                        <dt>営業時間</dt>
+                        <dd>11:00～20:00</dd>
+
+                        <dt>定休日</dt>
+                        <dd><a href="#calendar">（営業カレンダーを<br>　御覧ください）</a></dd>
+
+                        <dt>TEL</dt>
+                        <dd>080-1322-9282</dd>
+
+                        <dt>Contact us</dt>
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSfJF-8VpQIwjaMe_T1oS7NrL8FWLnWCvKoGjLfp18Ayy5QdOQ/viewform?usp=publish-editor">
+                            <dd>お問い合わせフォーム</dd>
+                        </a>
+
+
+                    </dl>
+
+                    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.0448418561778!2d139.74267721573196!3d35.675897837870934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b89b2e1c8b1%3A0x59a123e3d5ac5ab6!2z44CSMTAwLTAwMTQg5p2x5Lqs6YO95Y2D5Luj55Sw5Yy65rC455Sw55S677yR5LiB55uu77yX4oiS77yR!5e0!3m2!1sja!2sjp!4v1545036128899" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2877.5732436636117!2d142.78000171231596!3d43.84394587097309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0d229711f8d33d%3A0xec4712d471928a01!2z44CSMDc4LTE3NjEg5YyX5rW36YGT5LiK5bed6YOh5LiK5bed55S65pet55S677yV77yY4oiS77yU!5e0!3m2!1sja!2sjp!4v1762312880104!5m2!1sja!2sjp"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <h3><img src="images/forrow_us.png" alt="Follow Us"></h3>
+                    <ul class="icons">
+                        <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-line"></i></a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+
+                </div>
+                <!--/.shop-data-->
+
+            </div>
+        </section>
+
+
+
+        <!-- ここからコピーライト -->
+        <footer class="section">
+            <div class="contents">
+                <small>Copyright&copy; TARUCHO All Rights Reserved.</small><br>
+                <a href="tradelaw.html"><small>特定商取引法に基づく表記</small></a>
+            </div>
+        </footer>
+
+
+
+        <!--テンプレートの著作。削除しないで下さい。-->
+        <div class="pr"><a href="https://template-party.com/" target="_blank">《Web Design:Template-Party》</a></div>
+
+
+
+    </main>
+
+    <!-- ハンバーガーアイコン -->
+    <header class="fixed-header">
+        <div class="header-left-icons">
+            <div class="header-logo">
+                <a href="index.html"><img src="images/tarucho_logo_01.png" alt=""></a>
+            </div>
+            <!-- <div class="header-logo"> -->
+            <!-- <img src="images/head_flag-icon.svg" alt=""> -->
+            <!-- </div> -->
+            <!-- <div><span>News</span></div>
+            <div><span>Calendar</span></div>
+            <div><span>Online Shop</span></div> -->
+        </div>
+
+        <a href="https://www.instagram.com/nepal_dar_lcog?igsh=MXh5cWJ5a2Vqa21sZA==" class="header-icon-btn header-instagram">
+            <i class="fa-brands fa-instagram" style="color: #e27051;"></i>
+            <span class="icon-text">IG</span>
+        </a>
+
+        <a href="calendar_test.html" class="header-icon-btn header-cal">
+            <i class="fa-solid fa-calendar" style="color: #e27051;"></i>
+            <span class="icon-text">Calendar</span>
+        </a>
+
+        <a href="shop.html" class="header-icon-btn header-shop">
+            <i class="fa-solid fa-store"></i>
+            <span class="icon-text">Shop</span>
+        </a>
+
+        <a href="cart.html" class="header-icon-btn header-cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-badge">0</span> <span class="icon-text">Cart</span>
+        </a>
+
+        <div id="menubar_hdr">
+            <span></span><span></span><span></span>
+        </div>
+    </header>
+
+
+    <!--開閉ブロック-->
+    <div id="menubar">
+        <nav>
+            <ul>
+                <li><a href="#home">トップ</a></li>
+                <li><a href="#special">News</a></li>
+                <li><a href="#kodawari">ダルバートってなぁに？</a></li>
+                <li><a href="#menu">メニュー</a></li>
+                <li><a href="shop.html">オンラインショップ</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#shop">ショップ情報</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!--/#menubar-->
+
+
+
+    <!--jQueryの読み込み-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!--パララックス（inview）-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
+    <script src="js/jquery.inview_set.js"></script>
+
+    <!--このテンプレート専用のスクリプト-->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

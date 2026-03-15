@@ -1,0 +1,125 @@
+/* ==========================================
+   FullCalendar カスタマイズ用CSS（整理版）
+========================================== */
+
+/* -----------------------------------
+   1. カレンダー全体の枠組みと基本設定
+----------------------------------- */
+/* カレンダー全体を囲む箱（背景色・角丸など） */
+#full-calendar-container {
+    /* background-color: #c69f74;  */
+    background-color: #f4c000;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* カレンダー全体の基本の文字色 */
+.fc {
+    color: #333333; 
+}
+
+/* すべての日付や曜日の文字（aタグ）の基本色 */
+.fc a {
+    color: #4a3b32 !important; /* タルチョの雰囲気に合わせたこげ茶色 */
+    text-decoration: none;
+}
+
+/* -----------------------------------
+   2. ヘッダー部分（タイトル・ボタン）
+----------------------------------- */
+/* カレンダーのタイトル（「2026年2月」など） */
+.fc-toolbar-title {
+    color: #e27051; /* タルチョのテーマカラー */
+    font-size: 1.5rem !important;
+    font-weight: bold;
+}
+
+/* 「今日」や「<」「>」の操作ボタン */
+.fc-button-primary {
+    background-color: darkgreen !important; /* ショップアイコンに合わせてダークグリーン */
+    border-color: darkgreen !important;
+}
+
+/* ロゴ画像を表示させる魔法 */
+.fc-logoSpacer-button {
+    background-image: url('../images/logo01.svg') !important; /* ←ロゴ画像のパスを合わせてね！ */
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: transparent !important;
+    border: none !important;
+    width: 60px !important;  /* ロゴの横幅（お好みで調整してね） */
+    height: 60px !important; /* ロゴの高さ（お好みで調整してね） */
+    padding: 0 !important;
+    cursor: default !important;
+    pointer-events: none;    /* ボタンとして反応させない */
+    margin-left: 10px !important;
+}
+
+/* 「今月」とロゴの間の隙間を調整 */
+.fc-today-button {
+    margin-right: 0 !important;
+}
+
+
+/* -----------------------------------
+   3. マス目の背景色（平日・土日・今日）
+----------------------------------- */
+/* 基本のマス目（全体） */
+.fc-theme-standard td, 
+.fc-theme-standard th {
+    background-color: #fffae6; /* f4c800 スパイスイエロー */
+}
+
+/* 今日のマス目 */
+.fc-day-today {
+    background-color: #fffae6 !important; /* ふんわり明るい黄色 */
+}
+
+/* 日曜日のマス目 */
+.fc-day-sun {
+    background-color: #fff0f0 !important; /* ほんのり赤 */
+}
+
+/* 土曜日のマス目 */
+.fc-day-sat {
+    background-color: #f0f8ff !important; /* ほんのり青 */
+}
+
+/* -----------------------------------
+   4. 曜日ごとの文字色（土・日）
+----------------------------------- */
+/* 日曜日の文字色（aタグ、日付数字、一番上の曜日） */
+.fc-day-sun a,
+.fc-day-sun .fc-col-header-cell-cushion,
+.fc-day-sun .fc-daygrid-day-number {
+    color: #e27051 !important; /* テラコッタ色 */
+}
+
+/* 土曜日の文字色（aタグ、日付数字、一番上の曜日） */
+.fc-day-sat a,
+.fc-day-sat .fc-col-header-cell-cushion,
+.fc-day-sat .fc-daygrid-day-number {
+    color: #3a7bd5 !important; /* 少し青っぽく */
+}
+
+/* -----------------------------------
+   5. 予定（イベント）の表示デザイン
+----------------------------------- */
+/* 予定のラベルの基本デザイン */
+.fc-event {
+    background-color: #fdc02d; /* カレンダーで使っていた黄色 */
+    border: none;
+    color: #333;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+/* 予定の文字が途中で切れないように枠内で折り返し（改行）させる */
+.fc-event-time,
+.fc-event-title,
+.fc-daygrid-event {
+    white-space: normal !important;
+    word-break: break-word !important; 
+    overflow: visible !important; 
+}
