@@ -406,7 +406,7 @@ topPage .contents {
 	height: 100vh;
 	display: flex;
 	align-items: center;
-	background: url("../images/1.jpg") no-repeat center center / cover;
+	background: url("../images/1.jpg") no-repeat center calc(50% - 12px) / cover;
 	/*背景画像の読み込み*/
 }
 
@@ -423,6 +423,7 @@ topPage #logo-container {
 	/*上、左右、下への余白*/
 	position: relative;
 	text-align: center;
+	margin-top:100px;
 }
 
 #logo-container p {
@@ -438,7 +439,7 @@ topPage #logo-container {
 topPage .logo img {
 	display: block;
 	margin: 0 auto;
-	width: 300px;
+	width: 200px;
 	/*ロゴ画像の幅。お好みで。*/
 	opacity: 0.7;
 	border-radius: 10px;

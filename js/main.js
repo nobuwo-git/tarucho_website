@@ -712,7 +712,7 @@ eventContent: function(arg) {
           // 時間とタイトルを <br> で改行して合体！
           let htmlStr = '<div style="white-space: normal; word-break: break-word; padding: 2px; line-height: 1.4; text-align: left;">' + 
                         '<span style="font-size: 0.85em; color: #222;">' + timeString + '</span><br>' + 
-                        '<span style="font-weight: bold; color: #333;">' + title + '</span>' + 
+                        '<span style="font-weight: bold; color: #333; font-size: 0.7em;">' + title + '</span>' + 
                         '</div>';
 
           return { html: htmlStr };
@@ -805,7 +805,7 @@ $(function() {
 
                             let htmlStr = '<div style="white-space: normal; word-break: break-word; padding: 2px; line-height: 1.4; text-align: left;">' + 
                                           '<span style="font-size: 0.85em; color: #222;">' + timeString + '</span><br>' + 
-                                          '<span style="font-weight: bold; color: #333;">' + title + '</span>' + 
+                                          '<span style="font-weight: bold; color: #333; font-size: 0.7em;">' + title + '</span>' + 
                                           '</div>';
 
                             return { html: htmlStr };
