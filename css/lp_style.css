@@ -1,0 +1,118 @@
+@charset "utf-8";
+
+/* ===============================================================
+   ダルバートLP テスト用専用スタイル
+=============================================================== */
+
+/* --- Section 1: ファーストビュー --- */
+#lp-hero::before {
+    /* PC閲覧時の「両サイド」の背景画像（元のトップページと同じものを指定） */
+    background: url("../images/bg_header.png") no-repeat center center / cover;
+    opacity: 1;
+}
+
+#lp-hero .contents {
+    /* メインの背景画像に kodawari_img2.jpg を設定 */
+    /* linear-gradientを使って、画像の上に黒の半透明フィルムを被せてテキストの視認性を確保 */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/kodawari_img2.jpg") no-repeat center center / cover;
+    color: #fff;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.lp-hero-copy {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.lp-hero-copy .main-copy {
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* 文字の視認性向上 */
+}
+
+.lp-hero-copy .sub-copy {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.lp-btn-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* 透過アウトラインボタン（実店舗案内用） */
+.lp-outline-btn {
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    padding: 12px 0;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #fff !important;
+    border: 2px solid #fff !important;
+    margin-top: 0;
+}
+.lp-outline-btn:hover {
+    background: #fff !important;
+    color: var(--secondary-color) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Section 2: フック（共感） --- */
+#lp-hook::before {
+    background-color: #fffae6; /* ナチュラルで温かみのあるクリーム色 */
+    opacity: 1;
+}
+
+#lp-hook .contents {
+    background-color: transparent; 
+}
+
+.lp-hook-box {
+    background-color: #fff !important; /* bg1の元の色を上書きして白抜きに */
+    border: 2px dashed var(--tertiary-color); /* 少し優しい印象の破線に */
+    text-align: center;
+    padding: 40px 20px !important;
+    border-radius: 15px;
+}
+
+.lp-hook-box .icon-wrap {
+    margin-bottom: 20px;
+}
+
+.lp-hook-box .icon-wrap i {
+    color: var(--accent-color); /* タルチョの緑色を使用 */
+    font-size: 2.5rem;
+}
+
+.lp-hook-box .hook-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--tertiary-accent-color);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.lp-hook-box .hook-solution {
+    font-size: 1.1rem;
+    line-height: 2;
+    color: #333;
+}
+
+.lp-hook-box .hook-solution .highlight {
+    color: var(--highlight-color); /* タルチョの赤色 */
+    font-size: 1.4rem;
+    margin: 0 5px;
+}

@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/../config.php';
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -553,6 +557,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
     <script src="js/jquery.inview_set.js"></script>
 
+    <script>
+        const API_CONFIG = {
+            calendarKey: "<?php echo GOOGLE_CALENDAR_API_KEY; ?"
+        };
+    </script>
+    
     <!--このテンプレート専用のスクリプト-->
     <script src="js/main.js?ver=<?php echo filemtime('js/main.js'); ?>"></script>
     <!-- <script src="js/main.js"></script> -->

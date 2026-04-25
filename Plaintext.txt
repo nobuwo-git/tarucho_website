@@ -1,0 +1,23 @@
+Plaintext
+
+<------ Prompt example ------>
+
+現在、Webサイトの開発を行っています。以下の要件とコードに基づいて、問題の解決（または機能の追加）を手伝ってください。
+
+【ディレクトリ構成と連携】
+- index.php (画面表示)
+- script.js (index.phpから読み込み。非同期でデータを取得)
+- fetch_data.php (script.jsから呼ばれるAPIエンドポイント)
+
+【現在の目的・問題点】
+script.jsからfetch_data.phpにデータを送信していますが、コンソールに「500 Internal Server Error」が出ます。
+
+【関連するコード】
+◆ index.php (該当のフォーム部分のみ)
+```html
+<form id="myForm">
+  <input type="text" id="itemName" name="itemName">
+  <button type="button" id="submitBtn">送信</button>
+</form>
+
+<------                 ------>

@@ -665,7 +665,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
         locale: 'ja', // 日本語にするよ！
-        googleCalendarApiKey: 'AIzaSyBARCgAz3mTqsGn7Bi1xSSpwDAVanIRL7g', // あとで取得して書き換える場所！
+        googleCalendarApiKey: API_CONFIG.calendarKey,
         events: '1c8900b430b36b7bcc4431607043e8327c66503d5bf0427db585eeba4d6aec7f@group.calendar.google.com', // ノブヲさんのカレンダーID！
         height: 'auto',
         headerToolbar: {
@@ -769,7 +769,7 @@ $(function() {
                     modalCalendar = new FullCalendar.Calendar(calendarEl, {
                         initialView: 'dayGridMonth',
                         locale: 'ja',
-                        googleCalendarApiKey: 'AIzaSyBARCgAz3mTqsGn7Bi1xSSpwDAVanIRL7g', 
+                        googleCalendarApiKey: API_CONFIG.calendarKey, 
                         events: '1c8900b430b36b7bcc4431607043e8327c66503d5bf0427db585eeba4d6aec7f@group.calendar.google.com',
                         height: 'auto',
                         headerToolbar: {

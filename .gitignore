@@ -2,3 +2,5 @@ images/
 _manual/
 stripe-php/
 trush-file/
+.env
+config.php
